@@ -185,47 +185,38 @@ sub _SettingUpdate {
 
     my $SysConfigObject = $Kernel::OM->Get('Kernel::System::SysConfig');
 
-    # OTOBO 5 SysConfig API
-    if ( $SysConfigObject->can('ConfigItemUpdate') ) {
-        ## nofilter(TidyAll::Plugin::OTOBO::Migrations::OTOBO6::SysConfig)
-        $SysConfigObject->ConfigItemUpdate(%Param);
-    }
+    my $SettingName = 'SecureMode';
 
-    # OTOBO 10+ SysConfig API
-    else {
-        my $SettingName = 'SecureMode';
+    my $ExclusiveLockGUID = $SysConfigObject->SettingLock(
+        Name   => $Param{Key},
+        Force  => 1,
+        UserID => 1,
+    );
 
-        my $ExclusiveLockGUID = $SysConfigObject->SettingLock(
-            Name   => $Param{Key},
-            Force  => 1,
-            UserID => 1,
-        );
+    # Update config item via SysConfig object.
+    my $Result = $SysConfigObject->SettingUpdate(
+        Name              => $Param{Key},
+        IsValid           => $Param{Valid},
+        EffectiveValue    => $Param{Value},
+        ExclusiveLockGUID => $ExclusiveLockGUID,
+        UserID            => 1,
+    );
 
-        # Update config item via SysConfig object.
-        my $Result = $SysConfigObject->SettingUpdate(
-            Name              => $Param{Key},
-            IsValid           => $Param{Valid},
-            EffectiveValue    => $Param{Value},
-            ExclusiveLockGUID => $ExclusiveLockGUID,
-            UserID            => 1,
-        );
-
-        if ( !$Result ) {
-            $Kernel::OM->Get('Kernel::Output::HTML::Layout')->FatalError(
-                Message => Translatable('Can\'t write Config file!'),
-            );
-        }
-
-        # There is no need to unlock the setting as it was already unlocked in the update.
-
-        # 'Rebuild' the configuration.
-        my $Success = $SysConfigObject->ConfigurationDeploy(
-            Comments    => "Installer deployment",
-            AllSettings => 1,
-            Force       => 1,
-            UserID      => 1,
+    if ( !$Result ) {
+        $Kernel::OM->Get('Kernel::Output::HTML::Layout')->FatalError(
+            Message => Translatable('Can\'t write Config file!'),
         );
     }
+
+    # There is no need to unlock the setting as it was already unlocked in the update.
+
+    # 'Rebuild' the configuration.
+    my $Success = $SysConfigObject->ConfigurationDeploy(
+        Comments    => "Installer deployment",
+        AllSettings => 1,
+        Force       => 1,
+        UserID      => 1,
+    );
 
     return 1;
 }
