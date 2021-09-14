@@ -113,13 +113,6 @@ sub DataGet {
         shift @LogMessages;
     }
 
-    # trim the log message array
-    LINE:
-    for my $Line ( reverse @LogMessages ) {
-        last LINE if $Line !~ m{ \A \s* \z }xms;
-        shift @LogMessages;
-    }
-
     $Param{ModuleRef}->{Data} = \@LogMessages;
 
     return 1;
