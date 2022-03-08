@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2022 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -15,12 +15,17 @@
 # --
 
 package Kernel::System::Fred::STDERRLog;
-## no critic(Perl::Critic::Policy::OTOBO::ProhibitOpen)
 
+use v5.24;
 use strict;
 use warnings;
 
+# core modules
 use IO::Handle;
+
+# CPAN modules
+
+# OTOBO modules
 
 our @ObjectDependencies = (
     'Kernel::Config',
@@ -49,10 +54,7 @@ sub new {
     my ( $Type, %Param ) = @_;
 
     # allocate new hash for object
-    my $Self = {};
-    bless( $Self, $Type );
-
-    return $Self;
+    return bless {}, $Type;
 }
 
 =item DataGet()
@@ -76,6 +78,7 @@ sub DataGet {
                 Priority => 'error',
                 Message  => "Need $Needed!",
             );
+
             return;
         }
     }
@@ -83,43 +86,42 @@ sub DataGet {
     # Make sure that we get everything to disk before trying to read it (otherwise content could be lost).
     STDERR->flush();
 
+    ## no critic(Perl::Critic::Policy::OTOBO::ProhibitOpen)
     # open the STDERR.log file to get the STDERR messages
     my $File = $Kernel::OM->Get('Kernel::Config')->Get('Home') . '/var/fred/STDERR.log';
     my $Filehandle;
-
-    if ( !open $Filehandle, '<:encoding(UTF-8)', $File ) {    ## no critic
+    if ( !open $Filehandle, '<:encoding(UTF-8)', $File ) {
         $Param{ModuleRef}->{Data} = [
             "Perhaps you don't have permission at /var/fred/ or /Kernel/Config/Files/AAAFred.pm.",
             "Can't read /var/fred/STDERR.log",
         ];
+
         return;
     }
 
-    # Read log until last "FRED" marker.
+    # Read log in reverse until last "FRED" marker.
     my @LogMessages;
     LINE:
     for my $Line ( reverse <$Filehandle> ) {
         last LINE if $Line =~ m{ \A \s* FRED \s* \z}xms;
+
         push @LogMessages, $Line;
     }
     close $Filehandle;
 
     print STDERR "\nFRED\n";
 
-    # trim the log message array
-    LINE:
-    for my $Line (@LogMessages) {
-        last LINE if $Line !~ m{ \A \s* \z }xms;
+    # left trim the log message array
+    while ( @LogMessages && $LogMessages[0] =~ m{ \A \s* \z }xms ) {
         shift @LogMessages;
     }
 
-    # trim the log message array
-    LINE:
-    for my $Line ( reverse @LogMessages ) {
-        last LINE if $Line !~ m{ \A \s* \z }xms;
-        shift @LogMessages;
+    # right trim the log message array
+    while ( @LogMessages && $LogMessages[-1] =~ m{ \A \s* \z }xms ) {
+        pop @LogMessages;
     }
 
+    # still in reverse
     $Param{ModuleRef}->{Data} = \@LogMessages;
 
     return 1;
