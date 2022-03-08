@@ -4,7 +4,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2022 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -18,12 +18,15 @@
 
 package Kernel::Config::Files::AAAFred;
 
+use v5.24;
 use strict;
 use warnings;
-no warnings 'redefine';    ## no critic
 
-use vars qw($Self);
+# core modules
 
+# CPAN modules
+
+# OTOBO modules
 use Kernel::Config::Defaults;
 use Kernel::Language;
 use Kernel::System::Fred::ConfigLog;
@@ -51,14 +54,15 @@ sub Load {
         }
 
         # move STDOUT to tmp file
-        if ( !open STDERR, '>>', $File ) {    ## no critic
+        ## no critic qw(OTOBO::ProhibitOpen)
+        if ( !open STDERR, '>>', $File ) {
             print STDERR "ERROR: Can't write $File!";
         }
     }
 
     # disable redefine warnings in this scope
     {
-        no warnings 'redefine';               ## no critic
+        no warnings 'redefine';    ## no critic qw(TestingAndDebugging::ProhibitNoWarnings)
 
         # Override Kernel::Language::Get() method to intercept missing translations
         if ( Kernel::Language->can('Get') && !Kernel::Language->can('GetOriginal') ) {
@@ -154,6 +158,7 @@ sub Load {
             };
         }
     }
+
     return;
 }
 
