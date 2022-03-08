@@ -136,7 +136,7 @@ sub CreateFredOutput {
     if ( $BranchName =~ m/^rel-\d+_\d+_\d+$/ ) {
         $BranchClass = 'Warning';
     }
-    elsif ( $BranchName =~ m{bug-((\d){1,6}).*} ) {
+    elsif ( $BranchName =~ m{^issue-#(\d+)-} ) {
         $BugNumber = $1;
     }
 
