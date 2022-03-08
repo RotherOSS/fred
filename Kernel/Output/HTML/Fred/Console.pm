@@ -16,16 +16,24 @@
 
 package Kernel::Output::HTML::Fred::Console;
 
+use v5.24;
 use strict;
 use warnings;
+
+# core modules
+use Cwd;
+
+# CPAN modules
+use Path::Class qw(file);
+use Text::Trim qw(trim);
+
+# OTOBO moduels
 
 our @ObjectDependencies = (
     'Kernel::Config',
     'Kernel::Output::HTML::Layout',
     'Kernel::System::Log',
 );
-
-use Cwd;
 
 =head1 NAME
 
@@ -53,10 +61,7 @@ sub new {
     my ( $Type, %Param ) = @_;
 
     # allocate new hash for object
-    my $Self = {};
-    bless( $Self, $Type );
-
-    return $Self;
+    return bless {}, $Type;
 }
 
 =item CreateFredOutput()
@@ -78,6 +83,7 @@ sub CreateFredOutput {
             Priority => 'error',
             Message  => 'Need ModuleRef!',
         );
+
         return;
     }
 
@@ -86,7 +92,7 @@ sub CreateFredOutput {
         . ( join ' - ', @{ $Param{ModuleRef}->{Data} } )
         . '</strong>';
 
-    return 1 if !$Param{ModuleRef}->{Status};
+    return 1 unless $Param{ModuleRef}->{Status};
 
     if ( $Param{ModuleRef}->{Setting} ) {
         $Kernel::OM->Get('Kernel::Output::HTML::Layout')->Block(
@@ -116,8 +122,8 @@ sub CreateFredOutput {
         }
     }
 
-    my $BranchClass;
-    my $BugNumber;
+    # Derive more info from the branch name
+    my ( $BranchClass, $BugNumber );
 
     if ( $BranchName eq 'master' ) {
         $BranchClass = 'Warning';
