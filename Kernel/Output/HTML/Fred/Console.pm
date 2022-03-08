@@ -132,7 +132,8 @@ sub CreateFredOutput {
     # Derive more info from the branch name
     my ( $BranchClass, $BugNumber );
 
-    if ( $BranchName eq 'master' ) {
+    # Warn in releases.
+    if ( $BranchName =~ m/^rel-\d+_\d+_\d+$/ ) {
         $BranchClass = 'Warning';
     }
     elsif ( $BranchName =~ m{bug-((\d){1,6}).*} ) {
