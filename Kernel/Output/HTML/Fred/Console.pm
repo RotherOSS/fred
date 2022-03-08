@@ -100,26 +100,33 @@ sub CreateFredOutput {
         );
     }
 
-    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+    my $ConfigObject    = $Kernel::OM->Get('Kernel::Config');
+    my $Home            = $ConfigObject->Get('Home');
+    my $SystemName      = $ConfigObject->Get('Fred::SystemName')      || $Home;
+    my $OTOBOVersion    = $ConfigObject->Get('Version')               || 'Version unknown';
+    my $BackgroundColor = $ConfigObject->Get('Fred::BackgroundColor') || 'red';
 
-    my $SystemName = $ConfigObject->Get('Fred::SystemName')
-        || $ConfigObject->Get('Home');
-    my $OTOBOVersion    = $ConfigObject->Get('Version') || 'Version unknown';
-    my $BackgroundColor = $ConfigObject->Get('Fred::BackgroundColor')
-        || 'red';
-    my $BranchName = 'could not be detected';
+    # Add git info to output
+    my $BranchName;
+    {
+        if ( -d "$Home/.git" ) {
+            my $OldWorkingDir = getcwd();
+            chdir($Home);
+            my $GitResult = `git branch`;
+            chdir($OldWorkingDir);
 
-    # Add current git branch to output
-    my $Home = $ConfigObject->Get('Home');
-    if ( -d "$Home/.git" ) {
-        my $OldWorkingDir = getcwd();
-        chdir($Home);
-        my $GitResult = `git branch`;
-        chdir($OldWorkingDir);
-
-        if ($GitResult) {
-            ($BranchName) = $GitResult =~ m/^[*] \s+ (\S+)/xms;
+            if ($GitResult) {
+                ($BranchName) = $GitResult =~ m/^[*] \s+ (\S+)/xms;
+            }
         }
+
+        # Look in the git-* files as fallback. These are usually available in the Docker images.
+        if ( !$BranchName && -r "$Home/git-branch.txt" ) {
+            $BranchName = file("$Home/git-branch.txt")->slurp;
+            trim $BranchName;
+        }
+
+        $BranchName ||= 'could not be detected';
     }
 
     # Derive more info from the branch name
