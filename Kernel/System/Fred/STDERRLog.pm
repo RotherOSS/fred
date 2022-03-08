@@ -111,18 +111,14 @@ sub DataGet {
 
     print STDERR "\nFRED\n";
 
-    # trim the log message array
-    LINE:
-    for my $Line (@LogMessages) {
-        last LINE if $Line !~ m{ \A \s* \z }xms;
+    # left trim the log message array
+    while ( @LogMessages && $LogMessages[0] =~ m{ \A \s* \z }xms ) {
         shift @LogMessages;
     }
 
-    # trim the log message array
-    LINE:
-    for my $Line ( reverse @LogMessages ) {
-        last LINE if $Line !~ m{ \A \s* \z }xms;
-        shift @LogMessages;
+    # right trim the log message array
+    while ( @LogMessages && $LogMessages[-1] =~ m{ \A \s* \z }xms ) {
+        pop @LogMessages;
     }
 
     # still in reverse
