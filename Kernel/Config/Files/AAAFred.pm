@@ -38,7 +38,7 @@ our $ObjectManagerDisabled = 1;
 sub Load {
     my ( $File, $Self ) = @_;
 
-    if ( $ENV{HTTP_USER_AGENT} ) {
+    if ( $ENV{GATEWAY_INTERFACE} ) {
 
         # check if the needed path is available
         my $Path = $Self->{Home} . '/var/fred';
