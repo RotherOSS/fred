@@ -31,6 +31,7 @@ our @ObjectDependencies = (
     'Kernel::Config',
     'Kernel::Output::HTML::Layout',
     'Kernel::System::Fred',
+    'Kernel::System::Web::Response',
 );
 
 =head1 NAME
@@ -68,24 +69,13 @@ sub Run {
     # do not show the debug bar in Fred's setting window
     return 1 if ( $LayoutObject->{Action} && $LayoutObject->{Action} eq 'DevelFred' );
 
-    # do nothing if output is an attachment download or AJAX request
-    if (
-        ${ $Param{Data} } =~ /^Content-Disposition: attachment;/mi
-        || ${ $Param{Data} } =~ /^Content-Disposition: inline;/mi
-        )
+    # Do nothing if output is an attachment download or AJAX request.
+    # Note that in OTOBO 10.1. the headers are no longer part of the data. Therefore inspect
+    # the global response object for checking headers.
     {
-        return 1;
-    }
+        my $ResponseObject = $Kernel::OM->Get('Kernel::System::Web::Response');
 
-    # do nothing if it is a redirect
-    if (
-        ${ $Param{Data} } =~ /^Status: 302 Moved/mi
-        && ${ $Param{Data} } =~ /^location:/mi
-        && length( ${ $Param{Data} } ) < 800
-        )
-    {
-        print STDERR "REDIRECT\n";
-        return 1;
+        return 1 if $ResponseObject->Header('Content-Disposition') =~ m/^(?:inline|attachment)/i;
     }
 
     # do nothing if it is fred it self
