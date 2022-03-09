@@ -78,8 +78,10 @@ sub Run {
         return 1 if $ResponseObject->Header('Content-Disposition') =~ m/^(?:inline|attachment)/i;
     }
 
-    # do nothing if it is fred it self
-    if ( ${ $Param{Data} } =~ m{Fred-Setting<\/title>}msx ) {
+    # No check for redirects are needed as redirects circumvent the output filters.
+
+    # do nothing if it is fred itself
+    if ( $Param{Data}->$* =~ m{Fred-Setting<\/title>}msx ) {
         print STDERR "CHANGE FRED SETTING\n";
 
         return 1;
