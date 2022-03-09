@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2022 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -16,9 +16,16 @@
 
 package Kernel::Output::HTML::FilterContent::Fred;
 
+use v5.24;
 use strict;
 use warnings;
+
+# core modules
 use URI::Escape;
+
+# CPAN modules
+
+# OTOBO modules
 
 our @ObjectDependencies = (
     'Kernel::Config',
@@ -54,15 +61,12 @@ sub Run {
     my ( $Self, %Param ) = @_;
 
     # perhaps no output is generated
-    die 'Fred: At the moment, your code generates no output!' if !$Param{Data};
+    die 'Fred: At the moment, your code generates no output!' unless $Param{Data};
 
-    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
     my $LayoutObject = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
 
     # do not show the debug bar in Fred's setting window
-    if ( $LayoutObject->{Action} && $LayoutObject->{Action} eq 'DevelFred' ) {
-        return 1;
-    }
+    return 1 if ( $LayoutObject->{Action} && $LayoutObject->{Action} eq 'DevelFred' );
 
     # do nothing if output is an attachment download or AJAX request
     if (
@@ -87,16 +91,16 @@ sub Run {
     # do nothing if it is fred it self
     if ( ${ $Param{Data} } =~ m{Fred-Setting<\/title>}msx ) {
         print STDERR "CHANGE FRED SETTING\n";
+
         return 1;
     }
 
     # do nothing if it does not contain the <html> element, might be
     # an embedded layout rendering
-    if ( ${ $Param{Data} } !~ m{<html[^>]*>}msx ) {
-        return 1;
-    }
+    return 1 unless $Param{Data}->$* =~ m{<html[^>]*>}msx;
 
     # get data of the activated modules
+    my $ConfigObject   = $Kernel::OM->Get('Kernel::Config');
     my $ModuleForRef   = $ConfigObject->Get('Fred::Module');
     my $ModulesDataRef = {};
     for my $Module ( sort keys %{$ModuleForRef} ) {
@@ -143,26 +147,26 @@ sub Run {
     );
 
     # include the fred output in the original output
-    if ( ${ $Param{Data} } !~ s/(\<body(|.+?)\>)/$1\n$Output\n\n\n\n/mx ) {
-        ${ $Param{Data} } =~ s/^(.)/\n$Output\n\n\n\n$1/mx;
+    if ( $Param{Data}->$* !~ s/(\<body(|.+?)\>)/$1\n$Output\n\n\n\n/mx ) {
+        $Param{Data}->$* =~ s/^(.)/\n$Output\n\n\n\n$1/mx;
     }
 
-    return if !$LayoutObject->{UserID};
+    return unless $LayoutObject->{UserID};
 
     # add fred icon to header
     my $Active = $ConfigObject->Get('Fred::Active') || 0;
     my $Class  = $Active ? 'FredActive' : '';
-    ${ $Param{Data} } =~ s{ <div [^>]* id="header" [^>]*> }{
+    $Param{Data}->$* =~ s{ <div [^>]* id="header" [^>]*> }{
         $&
 
         <div class="DevelFredToggleContainer">
             <a id="DevelFredToggleContainerLink" class="$Class" href="#">F</a>
         </div>
     }xmsig;
-    ${ $Param{Data} } =~ s{ (<body [^>]* class=" [^"]*) ( " [^>]*> ) }{ $1 $Class $2 }xmsig;
+    $Param{Data}->$* =~ s{ (<body [^>]* class=" [^"]*) ( " [^>]*> ) }{ $1 $Class $2 }xmsig;
 
     # Inject JS at the end of the body
-    ${ $Param{Data} } =~ s{</body>}{$JSOutput\n\t</body>}smx;
+    $Param{Data}->$* =~ s{</body>}{$JSOutput\n\t</body>}smx;
 
     return 1;
 }
