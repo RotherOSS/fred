@@ -92,7 +92,7 @@
         <li> the modules' output is not yet sophisticated <br/>
                     ideas for improving the output or sensible configurations will be very welcome </li>
         <li> please extend Fred, if you have good ideas <br/>
-        <li> if you have no time to implement your ideas yourselves, please enter them in dev mailinglist </li>
+        <li> if you have no time to implement your ideas yourselves, please enter them in Github issues </li>
         </ul>
         <br/>
     ]]></IntroInstall>
@@ -133,7 +133,7 @@
         <li> a modulok kimenete még nem kifinomult <br/>
                     szívesen fogadjuk a kimenet javításával vagy az érzékeny beállításokkal kapcsolatos ötleteket </li>
         <li> bővítse a Fred programot, ha vannak jó ötletei <br/>
-        <li> ha nincs ideje az ötletei megvalósításához, akkor írja le a fejlesztői levelezőlistán </li>
+        <li> ha nincs ideje az ötletei megvalósításához, akkor írja le a Github issues </li>
         </ul>
         <br/>
     ]]></IntroInstall>

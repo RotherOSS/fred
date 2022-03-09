@@ -49,7 +49,7 @@ sub Load {
         my $File = $Self->{Home} . '/var/fred/STDERR.log';
 
         # check log file size
-        if ( -s $File > 20 * 1024 * 1024 ) {
+        if ( -e $File && -s $File > 20 * 1024 * 1024 ) {
             unlink $File;
         }
 

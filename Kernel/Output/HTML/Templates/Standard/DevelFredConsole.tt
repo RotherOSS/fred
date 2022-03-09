@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2022 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -46,12 +46,25 @@
     </h1>
     <div class="DevelFredBoxContent FredElementList" id="DevelFredConsole">
         <span>System <strong>[% Data.SystemName | html %]</strong></span>
-        <span class="[% Data.BranchClass | html %]">Branch <strong>[% Data.BranchName | html %]</strong></span>
         <span>OTOBO <strong>[% Data.OTOBOVersion | html %]</strong></span>
         <span>mod_perl <strong>[% Data.ModPerl | html %]</strong></span>
         <span>Perl <strong>[% Data.Perl | html %]</strong></span>
-    [% IF Data.BugNumber %]
-        <span><i class="fa fa-external-link"></i> Open <a href="https://bugs.otobo.org/show_bug.cgi?id=[% Data.BugNumber | uri %]" target="_blank">Bug#[% Data.BugNumber | html %]</a> in BugZilla</span>
-    [% END %]
+        <details>
+            <summary><span class="[% Data.GitBranchClass | html %]">Git info</span></summary>
+            <dl>
+                <dt>Branch<dt>
+                <dd>[% Data.GitBranch | html %]</dd>
+                <dt>Repository<dt>
+                <dd>[% Data.GitRepo | html %]</dd>
+                <dt>Commit<dt>
+                <dd>[% Data.GitCommit | html %]</dd>
+                [% IF Data.IssueNumber %]
+                <dt>Issue<dt>
+                <dd>
+                    <i class="fa fa-external-link"></i> Open <a href="https://github.com/RotherOSS/otobo/issues/[% Data.IssueNumber | uri %]" target="_blank">Issue [% Data.IssueNumber | html %]</a> in Github
+                </dd>
+                [% END %]
+            </dl>
+        </details>
     </div>
 </div>
