@@ -21,7 +21,7 @@ use strict;
 use warnings;
 
 # core modules
-use Cwd;
+use Cwd qw(getcwd);
 
 # CPAN modules
 use Path::Class qw(file);
@@ -106,52 +106,55 @@ sub CreateFredOutput {
     my $OTOBOVersion    = $ConfigObject->Get('Version')               || 'Version unknown';
     my $BackgroundColor = $ConfigObject->Get('Fred::BackgroundColor') || 'red';
 
-    # Add git info to output
-    my $BranchName;
+    # Add git info to the output.
+    my ( $GitBranch, $GitRepo, $GitCommit );
     {
         if ( -d "$Home/.git" ) {
             my $OldWorkingDir = getcwd();
-            chdir($Home);
-            my $GitResult = `git branch`;
-            chdir($OldWorkingDir);
-
-            if ($GitResult) {
-                ($BranchName) = $GitResult =~ m/^[*] \s+ (\S+)/xms;
-            }
+            chdir $Home;
+            $GitBranch = `git branch --show-current`;
+            $GitRepo   = `git config --get remote.origin.url`;
+            $GitCommit = `git log --pretty=format:'%H' -n 1`;
+            chdir $OldWorkingDir;
         }
 
         # Look in the git-* files as fallback. These are usually available in the Docker images.
-        if ( !$BranchName && -r "$Home/git-branch.txt" ) {
-            $BranchName = file("$Home/git-branch.txt")->slurp;
-            trim $BranchName;
+        if ( !$GitBranch && -r "$Home/git-branch.txt" ) {
+            $GitBranch = file("$Home/git-branch.txt")->slurp;
+            trim $GitBranch;
+        }
+        if ( !$GitRepo && -r "$Home/git-repo.txt" ) {
+            $GitRepo = file("$Home/git-repo.txt")->slurp;
+            trim $GitRepo;
+        }
+        if ( !$GitCommit && -r "$Home/git-commit.txt" ) {
+            $GitCommit = file("$Home/git-commit.txt")->slurp;
+            trim $GitCommit;
         }
 
-        $BranchName ||= 'could not be detected';
+        $GitBranch ||= 'Git branch could not be detected';
+        $GitRepo   ||= 'Git repo could not be detected';
+        $GitCommit ||= 'Git commit could not be detected';
     }
 
-    # Derive more info from the branch name
-    my ( $BranchClass, $BugNumber );
-
-    # Warn in releases.
-    if ( $BranchName =~ m/^rel-\d+_\d+_\d+$/ ) {
-        $BranchClass = 'Warning';
-    }
-    elsif ( $BranchName =~ m{^issue-#(\d+)-} ) {
-        $BugNumber = $1;
-    }
+    # Warn when not in an issue branch
+    my ($IssueNumber) = $GitBranch =~ m{^issue-#(\d+)-};
+    my $BranchClass = defined $IssueNumber ? '' : 'Warning';
 
     $Param{ModuleRef}->{Output} = $Kernel::OM->Get('Kernel::Output::HTML::Layout')->Output(
         TemplateFile => 'DevelFredConsole',
         Data         => {
             Text            => $Console,
             ModPerl         => _ModPerl(),
-            Perl            => sprintf( "%vd", $^V ),
+            Perl            => sprintf( '%vd', $^V ),
             SystemName      => $SystemName,
             OTOBOVersion    => $OTOBOVersion,
-            BranchName      => $BranchName,
+            GitBranch       => $GitBranch,
+            GitRepo         => $GitRepo,
+            GitCommit       => $GitCommit,
+            IssueNumber     => $IssueNumber,
             BranchClass     => $BranchClass,
             BackgroundColor => $BackgroundColor,
-            BugNumber       => $BugNumber,
         },
     );
 
