@@ -14,7 +14,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 # --
 
-package Kernel::Output::HTML::Fred::EnvDump;
+package Kernel::Output::HTML::Fred::GitInfo;
 
 use v5.24;
 use strict;
@@ -27,11 +27,11 @@ our @ObjectDependencies = (
 
 =head1 NAME
 
-Kernel::Output::HTML::Fred::EnvDump - show dump of the environment ref, data for $Env in dtl
+Kernel::Output::HTML::Fred::GitInfo - show git info
 
 =head1 SYNOPSIS
 
-All layout functions of the layout environment dump object
+Git info.
 
 =over 4
 
@@ -80,20 +80,20 @@ sub CreateFredOutput {
 
     # Kernel::System::Fred::EnvDump::DataGet() is not used,
     # as the data of interest is not easily available there.
-    for my $Key ( sort keys $LayoutObject->{EnvRef}->%* ) {
+    for my $Key ( sort keys $Param{ModuleRef}->{Data}->%* ) {
 
         $LayoutObject->Block(
-            Name => 'EnvDataRow',
+            Name => 'DataRow',
             Data => {
                 Key   => $Key,
-                Value => $LayoutObject->{EnvRef}->{$Key},
+                Value => $Param{ModuleRef}->{Data}->{$Key},
             },
         );
     }
 
     # output the html
     $Param{ModuleRef}->{Output} = $LayoutObject->Output(
-        TemplateFile => 'DevelFredEnvDump',
+        TemplateFile => 'DevelFredGitInfo',
     );
 
     return 1;
