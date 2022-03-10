@@ -65,6 +65,10 @@
         <title>EnvDump</title>
         <para>show info about the environment of the layout object </para>
     </sect1>
+    <sect1>
+        <title>GitInfo</title>
+        <para>show info about the Git sandbox </para>
+    </sect1>
 </chapter>
 
 <chapter>

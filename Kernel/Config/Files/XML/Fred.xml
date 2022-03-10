@@ -194,6 +194,16 @@
             </Hash>
         </Value>
     </Setting>
+    <Setting Name="Fred::Module###GitInfo" Required="0" Valid="1">
+        <Description Translatable="1">Turn on if you want to see information about the Git sandbox.</Description>
+        <Navigation>Core::Fred</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Active">0</Item>
+                <Item Key="Description">Show info about the Git sandbox.</Item>
+            </Hash>
+        </Value>
+    </Setting>
     <Setting Name="Frontend::Module###DevelFred" Required="0" Valid="1">
         <Description Translatable="1">Frontend module registration for the devel fred object in the admin area.</Description>
         <Navigation>Frontend::Admin::ModuleRegistration</Navigation>

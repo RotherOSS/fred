@@ -46,25 +46,12 @@
     </h1>
     <div class="DevelFredBoxContent FredElementList" id="DevelFredConsole">
         <span>System <strong>[% Data.SystemName | html %]</strong></span>
+        <span class="[% Data.BranchClass | html %]">Branch <strong>[% Data.GitBranch | html %]</strong></span>
         <span>OTOBO <strong>[% Data.OTOBOVersion | html %]</strong></span>
         <span>mod_perl <strong>[% Data.ModPerl | html %]</strong></span>
         <span>Perl <strong>[% Data.Perl | html %]</strong></span>
-        <details>
-            <summary><span class="[% Data.GitBranchClass | html %]">Git info</span></summary>
-            <dl>
-                <dt>Branch<dt>
-                <dd>[% Data.GitBranch | html %]</dd>
-                <dt>Repository<dt>
-                <dd>[% Data.GitRepo | html %]</dd>
-                <dt>Commit<dt>
-                <dd>[% Data.GitCommit | html %]</dd>
-                [% IF Data.IssueNumber %]
-                <dt>Issue<dt>
-                <dd>
-                    <i class="fa fa-external-link"></i> Open <a href="https://github.com/RotherOSS/otobo/issues/[% Data.IssueNumber | uri %]" target="_blank">Issue [% Data.IssueNumber | html %]</a> in Github
-                </dd>
-                [% END %]
-            </dl>
-        </details>
+    [% IF Data.BugNumber %]
+        <span><i class="fa fa-external-link"></i> Open <a href="https://github.com/RotherOSS/otobo/issues/[% Data.GithubIssue | uri %]" target="_blank">Issue [% Data.GithubIssue | html %]</a> in Github</span>
+    [% END %]
     </div>
 </div>

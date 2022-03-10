@@ -107,14 +107,12 @@ sub CreateFredOutput {
     my $BackgroundColor = $ConfigObject->Get('Fred::BackgroundColor') || 'red';
 
     # Add git info to the output.
-    my ( $GitBranch, $GitRepo, $GitCommit );
+    my $GitBranch;
     {
         if ( -d "$Home/.git" ) {
             my $OldWorkingDir = getcwd();
             chdir $Home;
             $GitBranch = `git branch --show-current`;
-            $GitRepo   = `git config --get remote.origin.url`;
-            $GitCommit = `git log --pretty=format:'%H' -n 1`;
             chdir $OldWorkingDir;
         }
 
@@ -123,23 +121,13 @@ sub CreateFredOutput {
             $GitBranch = file("$Home/git-branch.txt")->slurp;
             trim $GitBranch;
         }
-        if ( !$GitRepo && -r "$Home/git-repo.txt" ) {
-            $GitRepo = file("$Home/git-repo.txt")->slurp;
-            trim $GitRepo;
-        }
-        if ( !$GitCommit && -r "$Home/git-commit.txt" ) {
-            $GitCommit = file("$Home/git-commit.txt")->slurp;
-            trim $GitCommit;
-        }
 
         $GitBranch ||= 'Git branch could not be detected';
-        $GitRepo   ||= 'Git repo could not be detected';
-        $GitCommit ||= 'Git commit could not be detected';
     }
 
     # Warn when not in an issue branch
-    my ($IssueNumber) = $GitBranch =~ m{^issue-#(\d+)-};
-    my $BranchClass = defined $IssueNumber ? '' : 'Warning';
+    my ($GithubIssue) = $GitBranch =~ m{^issue-#(\d+)-};
+    my $BranchClass = defined $GithubIssue ? '' : 'Warning';
 
     $Param{ModuleRef}->{Output} = $Kernel::OM->Get('Kernel::Output::HTML::Layout')->Output(
         TemplateFile => 'DevelFredConsole',
@@ -150,9 +138,7 @@ sub CreateFredOutput {
             SystemName      => $SystemName,
             OTOBOVersion    => $OTOBOVersion,
             GitBranch       => $GitBranch,
-            GitRepo         => $GitRepo,
-            GitCommit       => $GitCommit,
-            IssueNumber     => $IssueNumber,
+            GithubIssue     => $GithubIssue,
             BranchClass     => $BranchClass,
             BackgroundColor => $BackgroundColor,
         },
