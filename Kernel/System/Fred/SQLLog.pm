@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -85,7 +85,7 @@ sub DataGet {
     my $File = $Kernel::OM->Get('Kernel::Config')->Get('Home') . '/var/fred/SQL.log';
 
     my $Filehandle;
-    if ( !open $Filehandle, '<', $File ) {    ## no critic
+    if ( !open $Filehandle, '<', $File ) {    ## no critic qw(InputOutput::RequireBriefOpen)
         $Param{ModuleRef}->{Data} = ["Can't read /var/fred/SQL.log"];
         return;
     }
@@ -101,8 +101,8 @@ sub DataGet {
         # do not show the log from the previous request
         last LINE if $Line =~ /FRED/;
 
-     # a typical line from SQL.log looks like:
-     # SQL-SELECT##!##SELECT 1 + 1 FROM dual WHERE id = ? AND user_id = ?##!##1, 2##!##Kernel::System::User##!##0.004397
+        # a typical line from SQL.log looks like:
+        # SQL-SELECT##!##SELECT 1 + 1 FROM dual WHERE id = ? AND user_id = ?##!##1, 2##!##Kernel::System::User##!##0.004397
         my @SplitLogLine = split /##!##/, $Line;
         if ( $SplitLogLine[0] eq 'SQL-DO' && $SplitLogLine[1] =~ m{ \A SELECT }xms ) {
             $SplitLogLine[0] .= ' - Perhaps you have an error you use DO for a SELECT-Statement:';
@@ -166,7 +166,7 @@ sub InsertWord {
 
     # Fixup multiline SQL statements
     if ( $Param{What} =~ m/^SQL/smx ) {
-        my @What = split '##!##', $Param{What};
+        my @What = split /##!##/, $Param{What};
 
         # hide white space
         $What[1] =~ s/\r?\n/ /smxg;
@@ -217,7 +217,12 @@ sub PostStatement {
     my @Array = map { defined $_ && defined ${$_} ? ${$_} : 'undef' } @{ $Param{Bind} || [] };
 
     # Replace newlines
-    @Array = map { $_ =~ s{\r?\n}{[\\n]}smxg; $_; } @Array;    ## no critic
+    # TODO test this if possible
+    my @NewArray;
+    for my $Element (@Array) {
+        push @NewArray, $Element =~ s{\r?\n}{[\\n]}smxg;
+    }
+    @Array = @NewArray;
 
     # Limit bind param length
     @Array = map { length($_) > 100 ? ( substr( $_, 0, 100 ) . '[...]' ) : $_ } @Array;
