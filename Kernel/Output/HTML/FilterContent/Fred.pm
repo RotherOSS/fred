@@ -64,12 +64,18 @@ sub Run {
         return 1;
     }
 
+    # NOTE with changes introduced for rel-10_1, some requests, e.g. to AgentTicketArticleContent, bypass this check
     # do nothing if output is an attachment download or AJAX request
     if (
         ${ $Param{Data} } =~ /^Content-Disposition: attachment;/mi
         || ${ $Param{Data} } =~ /^Content-Disposition: inline;/mi
         )
     {
+        return 1;
+    }
+
+    # do nothing if data does not start with DOCTYPE tag (indicating AJAX request)
+    if ( ${ $Param{Data} } !~ /^<!DOCTYPE html>/mi ) {
         return 1;
     }
 
