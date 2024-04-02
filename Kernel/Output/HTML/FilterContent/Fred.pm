@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -64,12 +64,18 @@ sub Run {
         return 1;
     }
 
+    # NOTE with changes introduced for rel-10_1, some requests, e.g. to AgentTicketArticleContent, bypass this check
     # do nothing if output is an attachment download or AJAX request
     if (
         ${ $Param{Data} } =~ /^Content-Disposition: attachment;/mi
         || ${ $Param{Data} } =~ /^Content-Disposition: inline;/mi
         )
     {
+        return 1;
+    }
+
+    # do nothing if data does not start with DOCTYPE tag (indicating AJAX request)
+    if ( ${ $Param{Data} } !~ /^<!DOCTYPE html>/mi ) {
         return 1;
     }
 
