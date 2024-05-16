@@ -1,0 +1,339 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
+# This file is distributed under the same license as the OTOBO Installation Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OTOBO Installation Guide rel-11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-16 09:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../content/index.rst:20
+msgid "Sacrifice to Sphinx"
+msgstr ""
+
+#: ../../content/index.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../content/index.rst:24
+msgid "A tool to help the developer during development."
+msgstr ""
+
+#: ../../content/index.rst:27
+msgid "System requirements"
+msgstr ""
+
+#: ../../content/index.rst:30
+msgid "Framework"
+msgstr ""
+
+#: ../../content/index.rst:31
+msgid "OTOBO 11.0.x"
+msgstr ""
+
+#: ../../content/index.rst:34
+msgid "Packages"
+msgstr ""
+
+#: ../../content/index.rst:35
+#: ../../content/index.rst:39
+msgid "\\-"
+msgstr ""
+
+#: ../../content/index.rst:38
+msgid "Third-party software"
+msgstr ""
+
+#: ../../content/index.rst:42
+msgid "Usage"
+msgstr ""
+
+#: ../../content/index.rst:45
+msgid "Setup"
+msgstr ""
+
+#: ../../content/index.rst:48
+msgid "Configuration Reference"
+msgstr ""
+
+#: ../../content/index.rst:51
+msgid "Core"
+msgstr ""
+
+#: ../../content/index.rst:54
+msgid "Fred::ConsoleWidth"
+msgstr ""
+
+#: ../../content/index.rst:55
+msgid "Defines the width of the Fred console in percent."
+msgstr ""
+
+#: ../../content/index.rst:58
+msgid "Core::Fred"
+msgstr ""
+
+#: ../../content/index.rst:61
+msgid "Fred::ConsoleHeight"
+msgstr ""
+
+#: ../../content/index.rst:62
+msgid "Defines the height of the Fred console in pixel."
+msgstr ""
+
+#: ../../content/index.rst:65
+msgid "Fred::Module###SQLLog"
+msgstr ""
+
+#: ../../content/index.rst:66
+msgid "Turn on if you want an realtime SQL statement log function."
+msgstr ""
+
+#: ../../content/index.rst:69
+msgid "Fred::ConsoleOpacity"
+msgstr ""
+
+#: ../../content/index.rst:70
+msgid "Defines the opacity of the Fred console, e.g. 0.9 for 10% transparency."
+msgstr ""
+
+#: ../../content/index.rst:73
+msgid "Fred::Active"
+msgstr ""
+
+#: ../../content/index.rst:74
+msgid "Defines if fred is visible or hidden."
+msgstr ""
+
+#: ../../content/index.rst:77
+msgid "Fred::Module###Console"
+msgstr ""
+
+#: ../../content/index.rst:78
+msgid "Turn on if you want to use the fred console."
+msgstr ""
+
+#: ../../content/index.rst:81
+msgid "Fred::Module###HTMLCheck"
+msgstr ""
+
+#: ../../content/index.rst:82
+msgid "Turn on if you want an realtime HTML-checker."
+msgstr ""
+
+#: ../../content/index.rst:85
+msgid "Fred::Module###JSLint"
+msgstr ""
+
+#: ../../content/index.rst:86
+msgid "Turn on if you want a JavaScript code quality checker. Only works in CVS Head."
+msgstr ""
+
+#: ../../content/index.rst:89
+msgid "Fred::Module###TranslationDebug"
+msgstr ""
+
+#: ../../content/index.rst:90
+msgid "Turn on if you want the translation debugger."
+msgstr ""
+
+#: ../../content/index.rst:93
+msgid "Fred::Module###ConfigLog"
+msgstr ""
+
+#: ../../content/index.rst:94
+msgid "Turn on if you want to use the config log mechanism."
+msgstr ""
+
+#: ../../content/index.rst:97
+msgid "Fred::Module###ConfigSwitch"
+msgstr ""
+
+#: ../../content/index.rst:98
+msgid "Turn on if you want to use the config switch mechanism."
+msgstr ""
+
+#: ../../content/index.rst:101
+msgid "Fred::Module###STDERRLog"
+msgstr ""
+
+#: ../../content/index.rst:102
+msgid "Turn on if you want to see the STDERRLog."
+msgstr ""
+
+#: ../../content/index.rst:105
+msgid "Fred::STDERRLogFilter"
+msgstr ""
+
+#: ../../content/index.rst:106
+msgid "Turn on if you want to filter the output of the STDERRLog. You can add a regular expression to filter the output."
+msgstr ""
+
+#: ../../content/index.rst:109
+msgid "Fred::Module###SessionDump"
+msgstr ""
+
+#: ../../content/index.rst:110
+msgid "Turn on if you want to see the data in the serverside session object."
+msgstr ""
+
+#: ../../content/index.rst:113
+msgid "Fred::Module###EnvDump"
+msgstr ""
+
+#: ../../content/index.rst:114
+msgid "Turn on if you want to see the data in the environment of the layout object."
+msgstr ""
+
+#: ../../content/index.rst:117
+msgid "Fred::ConfigLog###OrderBy"
+msgstr ""
+
+#: ../../content/index.rst:118
+msgid "Which order should the config log data have?"
+msgstr ""
+
+#: ../../content/index.rst:121
+msgid "Fred::ConfigSwitch###Settings"
+msgstr ""
+
+#: ../../content/index.rst:122
+msgid "List of config settings which should be available for quick switch. Please add only settings with possible values 0 or 1 (No/Yes)."
+msgstr ""
+
+#: ../../content/index.rst:125
+msgid "Fred::SystemName"
+msgstr ""
+
+#: ../../content/index.rst:126
+msgid "Customizable system name. If empty, config item 'Home' is being used for display."
+msgstr ""
+
+#: ../../content/index.rst:129
+msgid "Fred::BackgroundColor"
+msgstr ""
+
+#: ../../content/index.rst:130
+msgid "This option defines the background color for the sytem name box."
+msgstr ""
+
+#: ../../content/index.rst:133
+msgid "Frontend::Admin::ModuleRegistration"
+msgstr ""
+
+#: ../../content/index.rst:136
+msgid "Frontend::Module###DevelFred"
+msgstr ""
+
+#: ../../content/index.rst:137
+msgid "Frontend module registration for the devel fred object in the admin area."
+msgstr ""
+
+#: ../../content/index.rst:140
+msgid "Frontend::Base::Loader"
+msgstr ""
+
+#: ../../content/index.rst:143
+msgid "Loader::Customer::CommonCSS###000-Fred"
+msgstr ""
+
+#: ../../content/index.rst:144
+msgid "List of CSS files to always be loaded for the customer interface."
+msgstr ""
+
+#: ../../content/index.rst:147
+msgid "Loader::Customer::CommonJS###000-Fred"
+msgstr ""
+
+#: ../../content/index.rst:148
+msgid "List of JS files to always be loaded for the customer interface."
+msgstr ""
+
+#: ../../content/index.rst:151
+msgid "Loader::Agent::CommonJS###000-Fred"
+msgstr ""
+
+#: ../../content/index.rst:152
+msgid "List of JS files to always be loaded for the agent interface."
+msgstr ""
+
+#: ../../content/index.rst:155
+msgid "Loader::Agent::CommonCSS###000-Fred"
+msgstr ""
+
+#: ../../content/index.rst:156
+msgid "List of CSS files to always be loaded for the agent interface."
+msgstr ""
+
+#: ../../content/index.rst:159
+msgid "Frontend::Base::OutputFilter"
+msgstr ""
+
+#: ../../content/index.rst:162
+msgid "Frontend::Output::FilterContent###Fred"
+msgstr ""
+
+#: ../../content/index.rst:163
+msgid "Subscribe the output filter at the system."
+msgstr ""
+
+#: ../../content/index.rst:166
+msgid "Frontend::Customer::ModuleRegistration"
+msgstr ""
+
+#: ../../content/index.rst:169
+msgid "CustomerFrontend::Module###DevelFred"
+msgstr ""
+
+#: ../../content/index.rst:170
+msgid "Frontend module registration for the customer interface."
+msgstr ""
+
+#: ../../content/index.rst:173
+msgid "Frontend::Public::ModuleRegistration"
+msgstr ""
+
+#: ../../content/index.rst:176
+msgid "PublicFrontend::Module###DevelFred"
+msgstr ""
+
+#: ../../content/index.rst:177
+msgid "Frontend module registration for the public interface."
+msgstr ""
+
+#: ../../content/index.rst:180
+msgid "About"
+msgstr ""
+
+#: ../../content/index.rst:183
+msgid "Contact"
+msgstr ""
+
+#: ../../content/index.rst:184
+msgid "Rother OSS GmbH"
+msgstr ""
+
+#: ../../content/index.rst:185
+msgid "Email: hello@otobo.de"
+msgstr ""
+
+#: ../../content/index.rst:186
+msgid "Web: https://otobo.de"
+msgstr ""
+
+#: ../../content/index.rst:189
+msgid "Version"
+msgstr ""
+
+#: ../../content/index.rst:190
+msgid "Author: |doc-vendor| / Version: |doc-version| / Date of release: |doc-datestamp|"
+msgstr ""
+
