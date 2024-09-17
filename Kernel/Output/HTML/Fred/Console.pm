@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -98,7 +98,7 @@ sub CreateFredOutput {
 
     my $SystemName = $ConfigObject->Get('Fred::SystemName')
         || $ConfigObject->Get('Home');
-    my $OTOBOVersion     = $ConfigObject->Get('Version') || 'Version unknown';
+    my $OTOBOVersion    = $ConfigObject->Get('Version') || 'Version unknown';
     my $BackgroundColor = $ConfigObject->Get('Fred::BackgroundColor')
         || 'red';
     my $BranchName = 'could not be detected';
@@ -133,7 +133,7 @@ sub CreateFredOutput {
             ModPerl         => _ModPerl(),
             Perl            => sprintf( "%vd", $^V ),
             SystemName      => $SystemName,
-            OTOBOVersion     => $OTOBOVersion,
+            OTOBOVersion    => $OTOBOVersion,
             BranchName      => $BranchName,
             BranchClass     => $BranchClass,
             BackgroundColor => $BackgroundColor,
@@ -147,15 +147,8 @@ sub CreateFredOutput {
 sub _ModPerl {
 
     # find out, if modperl is used
-    my $ModPerl = 'not active';
-
-    ## no critic
-    if ( exists $ENV{MOD_PERL} && defined $mod_perl::VERSION ) {
-        $ModPerl = $mod_perl::VERSION;
-    }
-    ## use critic
-
-    return $ModPerl;
+    # disregard $ENV{MOD_PERL} as it is not sure whether Plack::Handler::Apache2 sets this variable
+    return $mod_perl::VERSION // 'not active';
 }
 
 1;
