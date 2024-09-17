@@ -4,7 +4,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -18,11 +18,15 @@
 
 package Kernel::Config::Files::AAAFred;
 
+use v5.24;
 use strict;
-use warnings;
+no warnings 'redefine';    ## no critic qw(TestingAndDebugging::ProhibitNoWarnings)
 
-our $Self;
+# core modules
 
+# CPAN modules
+
+# OTOBO modules
 use Kernel::Config::Defaults;
 use Kernel::Language;
 use Kernel::System::Fred::ConfigLog;
@@ -34,7 +38,7 @@ our $ObjectManagerDisabled = 1;
 sub Load {
     my ( $File, $Self ) = @_;
 
-    if ( $ENV{HTTP_USER_AGENT} ) {
+    if ( $ENV{GATEWAY_INTERFACE} ) {
 
         # check if the needed path is available
         my $Path = $Self->{Home} . '/var/fred';
@@ -50,7 +54,8 @@ sub Load {
         }
 
         # move STDOUT to tmp file
-        if ( !open STDERR, '>>', $File ) {    ## no critic qw(OTOBO::ProhibitOpen)
+        ## no critic qw(OTOBO::ProhibitOpen)
+        if ( !open STDERR, '>>', $File ) {
             print STDERR "ERROR: Can't write $File!";
         }
     }
@@ -153,6 +158,7 @@ sub Load {
             };
         }
     }
+
     return;
 }
 
