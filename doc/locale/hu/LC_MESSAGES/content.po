@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: OTOBO Installation Guide rel-11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-16 09:34+0200\n"
-"PO-Revision-Date: 2026-07-13 12:00+0000\n"
+"PO-Revision-Date: 2026-07-13 14:46+0000\n"
 "Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
 "Language-Team: Hungarian <http://translate.otobo.org/projects/otobo-11-0/"
 "addons/manuals/fred-dokumentation/hu/>\n"
@@ -288,10 +288,11 @@ msgstr ""
 #: ../../content/index.rst:152
 msgid "List of CSS files to always be loaded for the agent interface."
 msgstr ""
+"CSS-fájlok listája, amelyek mindig betöltődnek az ügyintézői felületnél."
 
 #: ../../content/index.rst:155
 msgid "Frontend::Base::OutputFilter"
-msgstr ""
+msgstr "Frontend::Base::OutputFilter"
 
 #: ../../content/index.rst:158
 msgid "Frontend::Output::FilterContent###Fred"
@@ -303,7 +304,7 @@ msgstr ""
 
 #: ../../content/index.rst:162
 msgid "Frontend::Customer::ModuleRegistration"
-msgstr ""
+msgstr "Frontend::Customer::ModuleRegistration"
 
 #: ../../content/index.rst:165
 msgid "CustomerFrontend::Module###DevelFred"
@@ -311,11 +312,11 @@ msgstr ""
 
 #: ../../content/index.rst:166
 msgid "Frontend module registration for the customer interface."
-msgstr ""
+msgstr "Előtétprogram-modul regisztráció az ügyfélfelülethez."
 
 #: ../../content/index.rst:169
 msgid "Frontend::Public::ModuleRegistration"
-msgstr ""
+msgstr "Frontend::Public::ModuleRegistration"
 
 #: ../../content/index.rst:172
 msgid "PublicFrontend::Module###DevelFred"
@@ -323,7 +324,7 @@ msgstr ""
 
 #: ../../content/index.rst:173
 msgid "Frontend module registration for the public interface."
-msgstr ""
+msgstr "Előtétprogram-modul regisztráció a nyilvános felülethez."
 
 #: ../../content/index.rst:176
 msgid "About"
