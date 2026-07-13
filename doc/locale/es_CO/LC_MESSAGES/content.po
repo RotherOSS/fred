@@ -9,344 +9,344 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO Installation Guide rel-11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-16 09:34+0200\n"
+"POT-Creation-Date: 2026-07-13 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
 
-#: ../../content/index.rst:16
-msgid "Sacrifice to Sphinx"
+#: ../content/index.rst:5
+msgid "Contents"
 msgstr ""
 
-#: ../../content/index.rst:19
+#: ../content/index.rst:10
 msgid "Description"
 msgstr ""
 
-#: ../../content/index.rst:20
+#: ../content/index.rst:11
 msgid "A tool to help the developer during development."
 msgstr ""
 
-#: ../../content/index.rst:23
+#: ../content/index.rst:14
 msgid "System requirements"
 msgstr ""
 
-#: ../../content/index.rst:26
+#: ../content/index.rst:17
 msgid "Framework"
 msgstr ""
 
-#: ../../content/index.rst:27
+#: ../content/index.rst:18
 msgid "OTOBO 11.0.x"
 msgstr ""
 
-#: ../../content/index.rst:30
+#: ../content/index.rst:21
 msgid "Packages"
 msgstr ""
 
-#: ../../content/index.rst:31 ../../content/index.rst:35
+#: ../content/index.rst:22 ../content/index.rst:26
 msgid "\\-"
 msgstr ""
 
-#: ../../content/index.rst:34
+#: ../content/index.rst:25
 msgid "Third-party software"
 msgstr ""
 
-#: ../../content/index.rst:38
+#: ../content/index.rst:29
 msgid "Usage"
 msgstr ""
 
-#: ../../content/index.rst:41
+#: ../content/index.rst:32
 msgid "Setup"
 msgstr ""
 
-#: ../../content/index.rst:44
+#: ../content/index.rst:35
 msgid "Configuration Reference"
 msgstr ""
 
-#: ../../content/index.rst:47
+#: ../content/index.rst:38
 msgid "Core"
 msgstr ""
 
-#: ../../content/index.rst:50
+#: ../content/index.rst:41
 msgid "Fred::ConsoleWidth"
 msgstr ""
 
-#: ../../content/index.rst:51
+#: ../content/index.rst:42
 msgid "Defines the width of the Fred console in percent."
 msgstr ""
 
-#: ../../content/index.rst:54
+#: ../content/index.rst:45
 msgid "Core::Fred"
 msgstr ""
 
-#: ../../content/index.rst:57
+#: ../content/index.rst:48
 msgid "Fred::ConsoleHeight"
 msgstr ""
 
-#: ../../content/index.rst:58
+#: ../content/index.rst:49
 msgid "Defines the height of the Fred console in pixel."
 msgstr ""
 
-#: ../../content/index.rst:61
+#: ../content/index.rst:52
 msgid "Fred::Module###SQLLog"
 msgstr ""
 
-#: ../../content/index.rst:62
+#: ../content/index.rst:53
 msgid "Turn on if you want an realtime SQL statement log function."
 msgstr ""
 
-#: ../../content/index.rst:65
+#: ../content/index.rst:56
 msgid "Fred::ConsoleOpacity"
 msgstr ""
 
-#: ../../content/index.rst:66
+#: ../content/index.rst:57
 msgid "Defines the opacity of the Fred console, e.g. 0.9 for 10% transparency."
 msgstr ""
 
-#: ../../content/index.rst:69
+#: ../content/index.rst:60
 msgid "Fred::Active"
 msgstr ""
 
-#: ../../content/index.rst:70
+#: ../content/index.rst:61
 msgid "Defines if fred is visible or hidden."
 msgstr ""
 
-#: ../../content/index.rst:73
+#: ../content/index.rst:64
 msgid "Fred::Module###Console"
 msgstr ""
 
-#: ../../content/index.rst:74
+#: ../content/index.rst:65
 msgid "Turn on if you want to use the fred console."
 msgstr ""
 
-#: ../../content/index.rst:77
+#: ../content/index.rst:68
 msgid "Fred::Module###HTMLCheck"
 msgstr ""
 
-#: ../../content/index.rst:78
+#: ../content/index.rst:69
 msgid "Turn on if you want an realtime HTML-checker."
 msgstr ""
 
-#: ../../content/index.rst:81
+#: ../content/index.rst:72
 msgid "Fred::Module###JSLint"
 msgstr ""
 
-#: ../../content/index.rst:82
+#: ../content/index.rst:73
 msgid ""
 "Turn on if you want a JavaScript code quality checker. Only works in CVS "
 "Head."
 msgstr ""
 
-#: ../../content/index.rst:85
+#: ../content/index.rst:76
 msgid "Fred::Module###TranslationDebug"
 msgstr ""
 
-#: ../../content/index.rst:86
+#: ../content/index.rst:77
 msgid "Turn on if you want the translation debugger."
 msgstr ""
 
-#: ../../content/index.rst:89
+#: ../content/index.rst:80
 msgid "Fred::Module###ConfigLog"
 msgstr ""
 
-#: ../../content/index.rst:90
+#: ../content/index.rst:81
 msgid "Turn on if you want to use the config log mechanism."
 msgstr ""
 
-#: ../../content/index.rst:93
+#: ../content/index.rst:84
 msgid "Fred::Module###ConfigSwitch"
 msgstr ""
 
-#: ../../content/index.rst:94
+#: ../content/index.rst:85
 msgid "Turn on if you want to use the config switch mechanism."
 msgstr ""
 
-#: ../../content/index.rst:97
+#: ../content/index.rst:88
 msgid "Fred::Module###STDERRLog"
 msgstr ""
 
-#: ../../content/index.rst:98
+#: ../content/index.rst:89
 msgid "Turn on if you want to see the STDERRLog."
 msgstr ""
 
-#: ../../content/index.rst:101
+#: ../content/index.rst:92
 msgid "Fred::STDERRLogFilter"
 msgstr ""
 
-#: ../../content/index.rst:102
+#: ../content/index.rst:93
 msgid ""
 "Turn on if you want to filter the output of the STDERRLog. You can add a "
 "regular expression to filter the output."
 msgstr ""
 
-#: ../../content/index.rst:105
+#: ../content/index.rst:96
 msgid "Fred::Module###SessionDump"
 msgstr ""
 
-#: ../../content/index.rst:106
+#: ../content/index.rst:97
 msgid "Turn on if you want to see the data in the serverside session object."
 msgstr ""
 
-#: ../../content/index.rst:109
+#: ../content/index.rst:100
 msgid "Fred::Module###EnvDump"
 msgstr ""
 
-#: ../../content/index.rst:110
+#: ../content/index.rst:101
 msgid ""
-"Turn on if you want to see the data in the environment of the layout "
-"object."
+"Turn on if you want to see the data in the environment of the layout object."
 msgstr ""
 
-#: ../../content/index.rst:113
+#: ../content/index.rst:104
 msgid "Fred::ConfigLog###OrderBy"
 msgstr ""
 
-#: ../../content/index.rst:114
+#: ../content/index.rst:105
 msgid "Which order should the config log data have?"
 msgstr ""
 
-#: ../../content/index.rst:117
+#: ../content/index.rst:108
 msgid "Fred::ConfigSwitch###Settings"
 msgstr ""
 
-#: ../../content/index.rst:118
+#: ../content/index.rst:109
 msgid ""
-"List of config settings which should be available for quick switch. "
-"Please add only settings with possible values 0 or 1 (No/Yes)."
+"List of config settings which should be available for quick switch. Please "
+"add only settings with possible values 0 or 1 (No/Yes)."
 msgstr ""
 
-#: ../../content/index.rst:121
+#: ../content/index.rst:112
 msgid "Fred::SystemName"
 msgstr ""
 
-#: ../../content/index.rst:122
+#: ../content/index.rst:113
 msgid ""
 "Customizable system name. If empty, config item 'Home' is being used for "
 "display."
 msgstr ""
 
-#: ../../content/index.rst:125
+#: ../content/index.rst:116
 msgid "Fred::BackgroundColor"
 msgstr ""
 
-#: ../../content/index.rst:126
+#: ../content/index.rst:117
 msgid "This option defines the background color for the sytem name box."
 msgstr ""
 
-#: ../../content/index.rst:129
+#: ../content/index.rst:120
 msgid "Frontend::Admin::ModuleRegistration"
 msgstr ""
 
-#: ../../content/index.rst:132
+#: ../content/index.rst:123
 msgid "Frontend::Module###DevelFred"
 msgstr ""
 
-#: ../../content/index.rst:133
-msgid "Frontend module registration for the devel fred object in the admin area."
+#: ../content/index.rst:124
+msgid ""
+"Frontend module registration for the devel fred object in the admin area."
 msgstr ""
 
-#: ../../content/index.rst:136
+#: ../content/index.rst:127
 msgid "Frontend::Base::Loader"
 msgstr ""
 
-#: ../../content/index.rst:139
+#: ../content/index.rst:130
 msgid "Loader::Customer::CommonCSS###000-Fred"
 msgstr ""
 
-#: ../../content/index.rst:140
+#: ../content/index.rst:131
 msgid "List of CSS files to always be loaded for the customer interface."
 msgstr ""
 
-#: ../../content/index.rst:143
+#: ../content/index.rst:134
 msgid "Loader::Customer::CommonJS###000-Fred"
 msgstr ""
 
-#: ../../content/index.rst:144
+#: ../content/index.rst:135
 msgid "List of JS files to always be loaded for the customer interface."
 msgstr ""
 
-#: ../../content/index.rst:147
+#: ../content/index.rst:138
 msgid "Loader::Agent::CommonJS###000-Fred"
 msgstr ""
 
-#: ../../content/index.rst:148
+#: ../content/index.rst:139
 msgid "List of JS files to always be loaded for the agent interface."
 msgstr ""
 
-#: ../../content/index.rst:151
+#: ../content/index.rst:142
 msgid "Loader::Agent::CommonCSS###000-Fred"
 msgstr ""
 
-#: ../../content/index.rst:152
+#: ../content/index.rst:143
 msgid "List of CSS files to always be loaded for the agent interface."
 msgstr ""
 
-#: ../../content/index.rst:155
+#: ../content/index.rst:146
 msgid "Frontend::Base::OutputFilter"
 msgstr ""
 
-#: ../../content/index.rst:158
+#: ../content/index.rst:149
 msgid "Frontend::Output::FilterContent###Fred"
 msgstr ""
 
-#: ../../content/index.rst:159
+#: ../content/index.rst:150
 msgid "Subscribe the output filter at the system."
 msgstr ""
 
-#: ../../content/index.rst:162
+#: ../content/index.rst:153
 msgid "Frontend::Customer::ModuleRegistration"
 msgstr ""
 
-#: ../../content/index.rst:165
+#: ../content/index.rst:156
 msgid "CustomerFrontend::Module###DevelFred"
 msgstr ""
 
-#: ../../content/index.rst:166
+#: ../content/index.rst:157
 msgid "Frontend module registration for the customer interface."
 msgstr ""
 
-#: ../../content/index.rst:169
+#: ../content/index.rst:160
 msgid "Frontend::Public::ModuleRegistration"
 msgstr ""
 
-#: ../../content/index.rst:172
+#: ../content/index.rst:163
 msgid "PublicFrontend::Module###DevelFred"
 msgstr ""
 
-#: ../../content/index.rst:173
+#: ../content/index.rst:164
 msgid "Frontend module registration for the public interface."
 msgstr ""
 
-#: ../../content/index.rst:176
+#: ../content/index.rst:167
 msgid "About"
 msgstr ""
 
-#: ../../content/index.rst:179
+#: ../content/index.rst:170
 msgid "Contact"
 msgstr ""
 
-#: ../../content/index.rst:180
+#: ../content/index.rst:171
 msgid "Rother OSS GmbH"
 msgstr ""
 
-#: ../../content/index.rst:181
+#: ../content/index.rst:172
 msgid "Email: hello@otobo.de"
 msgstr ""
 
-#: ../../content/index.rst:182
+#: ../content/index.rst:173
 msgid "Web: https://otobo.de"
 msgstr ""
 
-#: ../../content/index.rst:185
+#: ../content/index.rst:176
 msgid "Version"
 msgstr ""
 
-#: ../../content/index.rst:186
+#: ../content/index.rst:177
 msgid ""
 "Author: |doc-vendor| / Version: |doc-version| / Date of release: |doc-"
 "datestamp|"
 msgstr ""
-
