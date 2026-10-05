@@ -4,349 +4,361 @@
 # Guide package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO Installation Guide rel-10.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-16 09:32+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2026-10-05 07:41+0000\n"
+"Last-Translator: Kozo Sakurai <sakurai@io-architect.com>\n"
+"Language-Team: Japanese <http://translate.otobo.org/projects/otobo-10-1/"
+"addons/manuals/fred-dokumentation/ja/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9\n"
 
 #: ../../content/index.rst:16
 msgid "Sacrifice to Sphinx"
-msgstr ""
+msgstr "Sacrifice to Sphinx"
 
 #: ../../content/index.rst:19
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #: ../../content/index.rst:20
 msgid "A tool to help the developer during development."
-msgstr ""
+msgstr "開発中に開発者を支援するツール。"
 
 #: ../../content/index.rst:23
 msgid "System requirements"
-msgstr ""
+msgstr "システム要件"
 
 #: ../../content/index.rst:26
 msgid "Framework"
-msgstr ""
+msgstr "フレームワーク"
 
 #: ../../content/index.rst:27
 msgid "OTOBO 10.1.x"
-msgstr ""
+msgstr "OTOBO 10.1.x"
 
 #: ../../content/index.rst:30
 msgid "Packages"
-msgstr ""
+msgstr "パッケージ"
 
 #: ../../content/index.rst:31 ../../content/index.rst:35
 msgid "\\-"
-msgstr ""
+msgstr "\\-"
 
 #: ../../content/index.rst:34
 msgid "Third-party software"
-msgstr ""
+msgstr "サードパーティ製ソフトウェア"
 
 #: ../../content/index.rst:38
 msgid "Usage"
-msgstr ""
+msgstr "使い方"
 
 #: ../../content/index.rst:41
 msgid "Setup"
-msgstr ""
+msgstr "セットアップ"
 
 #: ../../content/index.rst:44
 msgid "Configuration Reference"
-msgstr ""
+msgstr "設定リファレンス"
 
 #: ../../content/index.rst:47
 msgid "Core"
-msgstr ""
+msgstr "Core"
 
 #: ../../content/index.rst:50
 msgid "Fred::ConsoleWidth"
-msgstr ""
+msgstr "Fred::ConsoleWidth"
 
 #: ../../content/index.rst:51
 msgid "Defines the width of the Fred console in percent."
-msgstr ""
+msgstr "Fred コンソールの幅をパーセントで定義します。"
 
 #: ../../content/index.rst:54
 msgid "Core::Fred"
-msgstr ""
+msgstr "Core::Fred"
 
 #: ../../content/index.rst:57
 msgid "Fred::ConsoleHeight"
-msgstr ""
+msgstr "Fred::ConsoleHeight"
 
 #: ../../content/index.rst:58
 msgid "Defines the height of the Fred console in pixel."
-msgstr ""
+msgstr "Fred コンソールの高さをピクセルで定義します。"
 
 #: ../../content/index.rst:61
 msgid "Fred::ConsoleOpacity"
-msgstr ""
+msgstr "Fred::ConsoleOpacity"
 
 #: ../../content/index.rst:62
 msgid "Defines the opacity of the Fred console, e.g. 0.9 for 10% transparency."
-msgstr ""
+msgstr "Fred コンソールの不透明度を定義します（例: 透明度10%なら 0.9）。"
 
 #: ../../content/index.rst:65
 msgid "Fred::Module###SQLLog"
-msgstr ""
+msgstr "Fred::Module###SQLLog"
 
 #: ../../content/index.rst:66
 msgid "Turn on if you want an realtime SQL statement log function."
-msgstr ""
+msgstr "リアルタイムの SQL 文ログ機能を使用する場合はオンにします。"
 
 #: ../../content/index.rst:69
 msgid "Fred::Active"
-msgstr ""
+msgstr "Fred::Active"
 
 #: ../../content/index.rst:70
 msgid "Defines if fred is visible or hidden."
-msgstr ""
+msgstr "Fred を表示するか非表示にするかを定義します。"
 
 #: ../../content/index.rst:73
 msgid "Fred::Module###Console"
-msgstr ""
+msgstr "Fred::Module###Console"
 
 #: ../../content/index.rst:74
 msgid "Turn on if you want to use the fred console."
-msgstr ""
+msgstr "Fred コンソールを使用する場合はオンにします。"
 
 #: ../../content/index.rst:77
 msgid "Fred::Module###HTMLCheck"
-msgstr ""
+msgstr "Fred::Module###HTMLCheck"
 
 #: ../../content/index.rst:78
 msgid "Turn on if you want an realtime HTML-checker."
-msgstr ""
+msgstr "リアルタイムの HTML チェッカーを使用する場合はオンにします。"
 
 #: ../../content/index.rst:81
 msgid "Fred::Module###JSLint"
-msgstr ""
+msgstr "Fred::Module###JSLint"
 
 #: ../../content/index.rst:82
 msgid ""
 "Turn on if you want a JavaScript code quality checker. Only works in CVS "
 "Head."
 msgstr ""
+"JavaScript のコード品質チェッカーを使用する場合はオンにします。CVS Head での"
+"み動作します。"
 
 #: ../../content/index.rst:85
 msgid "Fred::Module###TranslationDebug"
-msgstr ""
+msgstr "Fred::Module###TranslationDebug"
 
 #: ../../content/index.rst:86
 msgid "Turn on if you want the translation debugger."
-msgstr ""
+msgstr "翻訳デバッガーを使用する場合はオンにします。"
 
 #: ../../content/index.rst:89
 msgid "Fred::Module###ConfigLog"
-msgstr ""
+msgstr "Fred::Module###ConfigLog"
 
 #: ../../content/index.rst:90
 msgid "Turn on if you want to use the config log mechanism."
-msgstr ""
+msgstr "設定ログの仕組みを使用する場合はオンにします。"
 
 #: ../../content/index.rst:93
 msgid "Fred::Module###ConfigSwitch"
-msgstr ""
+msgstr "Fred::Module###ConfigSwitch"
 
 #: ../../content/index.rst:94
 msgid "Turn on if you want to use the config switch mechanism."
-msgstr ""
+msgstr "設定切り替えの仕組みを使用する場合はオンにします。"
 
 #: ../../content/index.rst:97
 msgid "Fred::Module###STDERRLog"
-msgstr ""
+msgstr "Fred::Module###STDERRLog"
 
 #: ../../content/index.rst:98
 msgid "Turn on if you want to see the STDERRLog."
-msgstr ""
+msgstr "STDERRLog を表示する場合はオンにします。"
 
 #: ../../content/index.rst:101
 msgid "Fred::STDERRLogFilter"
-msgstr ""
+msgstr "Fred::STDERRLogFilter"
 
 #: ../../content/index.rst:102
 msgid ""
 "Turn on if you want to filter the output of the STDERRLog. You can add a "
 "regular expression to filter the output."
 msgstr ""
+"STDERRLog の出力を絞り込む場合はオンにします。出力を絞り込むための正規表現を"
+"追加できます。"
 
 #: ../../content/index.rst:105
 msgid "Fred::Module###SessionDump"
-msgstr ""
+msgstr "Fred::Module###SessionDump"
 
 #: ../../content/index.rst:106
 msgid "Turn on if you want to see the data in the serverside session object."
-msgstr ""
+msgstr "サーバー側のセッションオブジェクトのデータを表示する場合はオンにします。"
 
 #: ../../content/index.rst:109
 msgid "Fred::Module###EnvDump"
-msgstr ""
+msgstr "Fred::Module###EnvDump"
 
 #: ../../content/index.rst:110
 msgid ""
 "Turn on if you want to see the data in the environment of the layout "
 "object."
-msgstr ""
+msgstr "レイアウトオブジェクトの環境のデータを表示する場合はオンにします。"
 
 #: ../../content/index.rst:113
 msgid "Fred::ConfigLog###OrderBy"
-msgstr ""
+msgstr "Fred::ConfigLog###OrderBy"
 
 #: ../../content/index.rst:114
 msgid "Which order should the config log data have?"
-msgstr ""
+msgstr "設定ログのデータの並び順。"
 
 #: ../../content/index.rst:117
 msgid "Fred::ConfigSwitch###Settings"
-msgstr ""
+msgstr "Fred::ConfigSwitch###Settings"
 
 #: ../../content/index.rst:118
 msgid ""
 "List of config settings which should be available for quick switch. "
 "Please add only settings with possible values 0 or 1 (No/Yes)."
 msgstr ""
+"クイック切り替えに使用できる設定の一覧。値が 0 または 1（いいえ／はい）の設定"
+"のみを追加してください。"
 
 #: ../../content/index.rst:121
 msgid "Fred::SystemName"
-msgstr ""
+msgstr "Fred::SystemName"
 
 #: ../../content/index.rst:122
 msgid ""
 "Customizable system name. If empty, config item 'Home' is being used for "
 "display."
 msgstr ""
+"カスタマイズ可能なシステム名。空欄の場合は、設定項目 'Home' が表示に使用され"
+"ます。"
 
 #: ../../content/index.rst:125
 msgid "Fred::BackgroundColor"
-msgstr ""
+msgstr "Fred::BackgroundColor"
 
 #: ../../content/index.rst:126
 msgid "This option defines the background color for the sytem name box."
-msgstr ""
+msgstr "このオプションは、システム名ボックスの背景色を定義します。"
 
 #: ../../content/index.rst:129
 msgid "Frontend::Admin::ModuleRegistration"
-msgstr ""
+msgstr "Frontend::Admin::ModuleRegistration"
 
 #: ../../content/index.rst:132
 msgid "Frontend::Module###DevelFred"
-msgstr ""
+msgstr "Frontend::Module###DevelFred"
 
 #: ../../content/index.rst:133
 msgid "Frontend module registration for the devel fred object in the admin area."
-msgstr ""
+msgstr "管理画面の開発用 Fred オブジェクトのフロントエンドモジュールの登録。"
 
 #: ../../content/index.rst:136
 msgid "Frontend::Base::Loader"
-msgstr ""
+msgstr "Frontend::Base::Loader"
 
 #: ../../content/index.rst:139
 msgid "Loader::Customer::CommonCSS###000-Fred"
-msgstr ""
+msgstr "Loader::Customer::CommonCSS###000-Fred"
 
 #: ../../content/index.rst:140
 msgid "List of CSS files to always be loaded for the customer interface."
-msgstr ""
+msgstr "顧客インタフェースで常に読み込む CSS ファイルの一覧。"
 
 #: ../../content/index.rst:143
 msgid "Loader::Customer::CommonJS###000-Fred"
-msgstr ""
+msgstr "Loader::Customer::CommonJS###000-Fred"
 
 #: ../../content/index.rst:144
 msgid "List of JS files to always be loaded for the customer interface."
-msgstr ""
+msgstr "顧客インタフェースで常に読み込む JS ファイルの一覧。"
 
 #: ../../content/index.rst:147
 msgid "Loader::Agent::CommonCSS###000-Fred"
-msgstr ""
+msgstr "Loader::Agent::CommonCSS###000-Fred"
 
 #: ../../content/index.rst:148
 msgid "List of CSS files to always be loaded for the agent interface."
-msgstr ""
+msgstr "担当者インタフェースで常に読み込む CSS ファイルの一覧。"
 
 #: ../../content/index.rst:151
 msgid "Loader::Agent::CommonJS###000-Fred"
-msgstr ""
+msgstr "Loader::Agent::CommonJS###000-Fred"
 
 #: ../../content/index.rst:152
 msgid "List of JS files to always be loaded for the agent interface."
-msgstr ""
+msgstr "担当者インタフェースで常に読み込む JS ファイルの一覧。"
 
 #: ../../content/index.rst:155
 msgid "Frontend::Base::OutputFilter"
-msgstr ""
+msgstr "Frontend::Base::OutputFilter"
 
 #: ../../content/index.rst:158
 msgid "Frontend::Output::FilterContent###Fred"
-msgstr ""
+msgstr "Frontend::Output::FilterContent###Fred"
 
 #: ../../content/index.rst:159
 msgid "Subscribe the output filter at the system."
-msgstr ""
+msgstr "出力フィルターをシステムに登録します。"
 
 #: ../../content/index.rst:162
 msgid "Frontend::Customer::ModuleRegistration"
-msgstr ""
+msgstr "Frontend::Customer::ModuleRegistration"
 
 #: ../../content/index.rst:165
 msgid "CustomerFrontend::Module###DevelFred"
-msgstr ""
+msgstr "CustomerFrontend::Module###DevelFred"
 
 #: ../../content/index.rst:166
 msgid "Frontend module registration for the customer interface."
-msgstr ""
+msgstr "顧客インタフェース用のフロントエンドモジュールの登録。"
 
 #: ../../content/index.rst:169
 msgid "Frontend::Public::ModuleRegistration"
-msgstr ""
+msgstr "Frontend::Public::ModuleRegistration"
 
 #: ../../content/index.rst:172
 msgid "PublicFrontend::Module###DevelFred"
-msgstr ""
+msgstr "PublicFrontend::Module###DevelFred"
 
 #: ../../content/index.rst:173
 msgid "Frontend module registration for the public interface."
-msgstr ""
+msgstr "公開インタフェース用のフロントエンドモジュールの登録。"
 
 #: ../../content/index.rst:176
 msgid "About"
-msgstr ""
+msgstr "概要"
 
 #: ../../content/index.rst:179
 msgid "Contact"
-msgstr ""
+msgstr "連絡先"
 
 #: ../../content/index.rst:180
 msgid "Rother OSS GmbH"
-msgstr ""
+msgstr "Rother OSS GmbH"
 
 #: ../../content/index.rst:181
 msgid "Email: hello@otobo.de"
-msgstr ""
+msgstr "メール: hello@otobo.de"
 
 #: ../../content/index.rst:182
 msgid "Web: https://otobo.de"
-msgstr ""
+msgstr "Web: https://otobo.de"
 
 #: ../../content/index.rst:185
 msgid "Version"
-msgstr ""
+msgstr "バージョン"
 
 #: ../../content/index.rst:186
 msgid ""
 "Author: |doc-vendor| / Version: |doc-version| / Date of release: |doc-"
 "datestamp|"
 msgstr ""
-
+"作成者: |doc-vendor| / バージョン: |doc-version| / リリース日: |doc-"
+"datestamp|"
