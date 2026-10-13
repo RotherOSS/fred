@@ -57,7 +57,7 @@ Defines the opacity of the Fred console, e.g. 0.9 for 10% transparency.
 
 Fred::Module###SQLLog
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Turn on if you want an real time SQL statement log function.
+Turn on if you want a real time SQL statement log function.
 
 Fred::Active
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,7 +69,7 @@ Turn on if you want to use the Fred console.
 
 Fred::Module###HTMLCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Turn on if you want an real time HTML-checker.
+Turn on if you want a real time HTML-checker.
 
 Fred::Module###JSLint
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

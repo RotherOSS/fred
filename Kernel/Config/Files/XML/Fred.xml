@@ -98,7 +98,7 @@
         </Value>
     </Setting>
     <Setting Name="Fred::Module###SQLLog" Required="0" Valid="1">
-        <Description Translatable="1">Turn on if you want an real time SQL statement log function.</Description>
+        <Description Translatable="1">Turn on if you want a real time SQL statement log function.</Description>
         <Navigation>Core::Fred</Navigation>
         <Value>
             <Hash>
@@ -108,7 +108,7 @@
         </Value>
     </Setting>
     <Setting Name="Fred::Module###HTMLCheck" Required="0" Valid="1">
-        <Description Translatable="1">Turn on if you want an real time HTML-checker.</Description>
+        <Description Translatable="1">Turn on if you want a real time HTML-checker.</Description>
         <Navigation>Core::Fred</Navigation>
         <Value>
             <Hash>

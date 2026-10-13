@@ -102,7 +102,7 @@ msgid "Fred::Module###SQLLog"
 msgstr ""
 
 #: ../content/index.rst:57
-msgid "Turn on if you want an real time SQL statement log function."
+msgid "Turn on if you want a real time SQL statement log function."
 msgstr ""
 
 #: ../content/index.rst:60
@@ -126,7 +126,7 @@ msgid "Fred::Module###HTMLCheck"
 msgstr ""
 
 #: ../content/index.rst:69
-msgid "Turn on if you want an real time HTML-checker."
+msgid "Turn on if you want a real time HTML-checker."
 msgstr ""
 
 #: ../content/index.rst:72
