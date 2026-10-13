@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: OTOBO Installation Guide rel-11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-13 12:07+0000\n"
-"PO-Revision-Date: 2026-10-13 09:41+0000\n"
+"PO-Revision-Date: 2026-10-13 14:41+0000\n"
 "Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
 "Language-Team: Hungarian <http://translate.otobo.org/projects/otobo-11-0/"
 "addons/manuals/fred-dokumentation/hu/>\n"
@@ -270,6 +270,7 @@ msgstr ""
 #: ../content/index.rst:135
 msgid "List of JS files to always be loaded for the customer interface."
 msgstr ""
+"JavaScript-fájlok listája, amelyek mindig betöltődnek az ügyfélfelületnél."
 
 #: ../content/index.rst:138
 msgid "Loader::Agent::CommonJS###000-Fred"
@@ -340,11 +341,11 @@ msgstr "Rother OSS GmbH"
 
 #: ../content/index.rst:172
 msgid "Email: hello@otobo.de"
-msgstr ""
+msgstr "E-mail: hello@otobo.de"
 
 #: ../content/index.rst:173
 msgid "Web: https://otobo.de"
-msgstr ""
+msgstr "Web: https://otobo.de"
 
 #: ../content/index.rst:176
 msgid "Version"
