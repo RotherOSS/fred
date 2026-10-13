@@ -57,19 +57,19 @@ Defines the opacity of the Fred console, e.g. 0.9 for 10% transparency.
 
 Fred::Module###SQLLog
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Turn on if you want an realtime SQL statement log function.
+Turn on if you want a real time SQL statement log function.
 
 Fred::Active
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines if fred is visible or hidden.
+Defines if Fred is visible or hidden.
 
 Fred::Module###Console
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Turn on if you want to use the fred console.
+Turn on if you want to use the Fred console.
 
 Fred::Module###HTMLCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Turn on if you want an realtime HTML-checker.
+Turn on if you want a real time HTML-checker.
 
 Fred::Module###JSLint
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,7 +97,7 @@ Turn on if you want to filter the output of the STDERRLog. You can add a regular
 
 Fred::Module###SessionDump
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Turn on if you want to see the data in the serverside session object.
+Turn on if you want to see the data in the server side session object.
 
 Fred::Module###EnvDump
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -117,14 +117,14 @@ Customizable system name. If empty, config item 'Home' is being used for display
 
 Fred::BackgroundColor
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-This option defines the background color for the sytem name box.
+This option defines the background color for the system name box.
 
 Frontend::Admin::ModuleRegistration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Frontend::Module###DevelFred
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Frontend module registration for the devel fred object in the admin area.
+Frontend module registration for the devel Fred object in the admin area.
 
 Frontend::Base::Loader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

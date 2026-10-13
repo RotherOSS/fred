@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO Documentation dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-14 11:00+0000\n"
+"POT-Creation-Date: 2026-10-13 20:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,7 +102,7 @@ msgid "Fred::Module###SQLLog"
 msgstr ""
 
 #: ../content/index.rst:57
-msgid "Turn on if you want an realtime SQL statement log function."
+msgid "Turn on if you want a real time SQL statement log function."
 msgstr ""
 
 #: ../content/index.rst:60
@@ -110,7 +110,7 @@ msgid "Fred::Active"
 msgstr ""
 
 #: ../content/index.rst:61
-msgid "Defines if fred is visible or hidden."
+msgid "Defines if Fred is visible or hidden."
 msgstr ""
 
 #: ../content/index.rst:64
@@ -118,7 +118,7 @@ msgid "Fred::Module###Console"
 msgstr ""
 
 #: ../content/index.rst:65
-msgid "Turn on if you want to use the fred console."
+msgid "Turn on if you want to use the Fred console."
 msgstr ""
 
 #: ../content/index.rst:68
@@ -126,7 +126,7 @@ msgid "Fred::Module###HTMLCheck"
 msgstr ""
 
 #: ../content/index.rst:69
-msgid "Turn on if you want an realtime HTML-checker."
+msgid "Turn on if you want a real time HTML-checker."
 msgstr ""
 
 #: ../content/index.rst:72
@@ -182,7 +182,7 @@ msgid "Fred::Module###SessionDump"
 msgstr ""
 
 #: ../content/index.rst:97
-msgid "Turn on if you want to see the data in the serverside session object."
+msgid "Turn on if you want to see the data in the server side session object."
 msgstr ""
 
 #: ../content/index.rst:100
@@ -222,7 +222,7 @@ msgid "Fred::BackgroundColor"
 msgstr ""
 
 #: ../content/index.rst:117
-msgid "This option defines the background color for the sytem name box."
+msgid "This option defines the background color for the system name box."
 msgstr ""
 
 #: ../content/index.rst:120
@@ -234,7 +234,7 @@ msgid "Frontend::Module###DevelFred"
 msgstr ""
 
 #: ../content/index.rst:124
-msgid "Frontend module registration for the devel fred object in the admin area."
+msgid "Frontend module registration for the devel Fred object in the admin area."
 msgstr ""
 
 #: ../content/index.rst:127
