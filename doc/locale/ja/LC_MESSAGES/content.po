@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO Installation Guide rel-10.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-14 11:00+0000\n"
+"POT-Creation-Date: 2026-10-13 20:38+0000\n"
 "PO-Revision-Date: 2026-10-05 09:41+0000\n"
 "Last-Translator: Kozo Sakurai <sakurai@io-architect.com>\n"
 "Language-Team: Japanese <http://translate.otobo.org/projects/otobo-10-1/"
@@ -106,7 +106,9 @@ msgid "Fred::Module###SQLLog"
 msgstr "Fred::Module###SQLLog"
 
 #: ../content/index.rst:57
-msgid "Turn on if you want an realtime SQL statement log function."
+#, fuzzy
+#| msgid "Turn on if you want an realtime SQL statement log function."
+msgid "Turn on if you want a real time SQL statement log function."
 msgstr "リアルタイムの SQL 文ログ機能を使用する場合はオンにします。"
 
 #: ../content/index.rst:60
@@ -114,7 +116,9 @@ msgid "Fred::Active"
 msgstr "Fred::Active"
 
 #: ../content/index.rst:61
-msgid "Defines if fred is visible or hidden."
+#, fuzzy
+#| msgid "Defines if fred is visible or hidden."
+msgid "Defines if Fred is visible or hidden."
 msgstr "Fred を表示するか非表示にするかを定義します。"
 
 #: ../content/index.rst:64
@@ -122,7 +126,9 @@ msgid "Fred::Module###Console"
 msgstr "Fred::Module###Console"
 
 #: ../content/index.rst:65
-msgid "Turn on if you want to use the fred console."
+#, fuzzy
+#| msgid "Turn on if you want to use the fred console."
+msgid "Turn on if you want to use the Fred console."
 msgstr "Fred コンソールを使用する場合はオンにします。"
 
 #: ../content/index.rst:68
@@ -130,7 +136,9 @@ msgid "Fred::Module###HTMLCheck"
 msgstr "Fred::Module###HTMLCheck"
 
 #: ../content/index.rst:69
-msgid "Turn on if you want an realtime HTML-checker."
+#, fuzzy
+#| msgid "Turn on if you want an realtime HTML-checker."
+msgid "Turn on if you want a real time HTML-checker."
 msgstr "リアルタイムの HTML チェッカーを使用する場合はオンにします。"
 
 #: ../content/index.rst:72
@@ -194,7 +202,10 @@ msgid "Fred::Module###SessionDump"
 msgstr "Fred::Module###SessionDump"
 
 #: ../content/index.rst:97
-msgid "Turn on if you want to see the data in the serverside session object."
+#, fuzzy
+#| msgid ""
+#| "Turn on if you want to see the data in the serverside session object."
+msgid "Turn on if you want to see the data in the server side session object."
 msgstr ""
 "サーバー側のセッションオブジェクトのデータを表示する場合はオンにします。"
 
@@ -244,7 +255,9 @@ msgid "Fred::BackgroundColor"
 msgstr "Fred::BackgroundColor"
 
 #: ../content/index.rst:117
-msgid "This option defines the background color for the sytem name box."
+#, fuzzy
+#| msgid "This option defines the background color for the sytem name box."
+msgid "This option defines the background color for the system name box."
 msgstr "このオプションは、システム名ボックスの背景色を定義します。"
 
 #: ../content/index.rst:120
@@ -256,8 +269,11 @@ msgid "Frontend::Module###DevelFred"
 msgstr "Frontend::Module###DevelFred"
 
 #: ../content/index.rst:124
+#, fuzzy
+#| msgid ""
+#| "Frontend module registration for the devel fred object in the admin area."
 msgid ""
-"Frontend module registration for the devel fred object in the admin area."
+"Frontend module registration for the devel Fred object in the admin area."
 msgstr "管理画面の開発用 Fred オブジェクトのフロントエンドモジュールの登録。"
 
 #: ../content/index.rst:127
